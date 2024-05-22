@@ -125,7 +125,22 @@ public class AuthController {
         userRepository.save(user);
 
         // Send welcome email after successful registration
-        String emailResponse = emailService.sendSimpleMail(user.getEmail(), "Congratulations!!!", "Dear " + user.getUsername() + ", Your tech sibling is rohan prakash,(WOW X 3)!");
+        String emailResponse = emailService.sendSimpleMail(user.getEmail(), "Congratulations!", "Dear " + user.getUsername() + " Welcome to Masterpieces Mart!\r\n" + //
+                        "\r\n" + //
+                        "We are thrilled to have you join our community of art enthusiasts. At Masterpieces Mart, we strive to connect you with unique and original art pieces that inspire and captivate.\r\n" + //
+                        "\r\n" + //
+                        "Here’s what you can expect as a member:\r\n" + //
+                        "\r\n" + //
+                        "Explore Original Art: Browse through our extensive collection of artworks created by talented artists from around the world.\r\n" + //
+                        "Exclusive Offers: Be the first to know about new arrivals, special promotions, and exclusive deals.\r\n" + //
+                        "Personalized Recommendations: Receive tailored art suggestions based on your interests and preferences.\r\n" + //
+                        "To get started, simply log in to your account. If you have any questions or need assistance, our support team is always here to help. You can reach us at [support email] or [phone number].\r\n" + //
+                        "\r\n" + //
+                        "Thank you for joining Masterpieces Mart. We look forward to helping you discover the perfect pieces that speak to your artistic taste.\r\n" + //
+                        "\r\n" + //
+                        "Warm regards,\r\n" + //
+                        "\r\n" + //
+                        "The Masterpieces Mart Team ");
         System.out.println(emailResponse);
 
         return ResponseEntity.ok(new MessageResponse("Userdd registered successfully!"));
